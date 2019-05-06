@@ -90,90 +90,102 @@ const ProgressTimeline = ({ steps, value }) => {
             className={cx(
                 'ProgressTimeline',
                 css`
-                    width: 100%;
                     position: relative;
+                    padding-left: 10px;
+                    padding-right: 10px;
                 `
             )}
         >
             <div
-                className={cx(
-                    'ProgressTimeline__ProgressBar',
+               className={cx(
+                    'ProgressTimeline__Container',
                     css`
-                        position: relative;
                         width: 100%;
-                        height: 10px;
-                        background-color: rgba(70,85,105,.2);
-                        border-radius: 3px;
+                        position: relative;
                     `
                 )}
             >
-                {items.map((item, index) => (
-                    <div
-                        key={index}
-                        className={cx(
-                            'ProgressTimeline__ProgressBarItem',
-                            css`
-                                    position: absolute;
-                                    height: 100%;
-                                    &:not(:first-child) {
-                                        border-left: 1px solid #fff;
-                                    }
-                                `
-                        )}
-                        style={{
-                            width: item.sizePercentage + '%',
-                            left: item.offsetPercentage + '%'
-                        }}
-                    >
-
-                    </div>
-                ))}
-            </div>
-            <div
-                className={cx(
-                    'ProgressTimeline__Legend',
-                    css`
-                    position: relative;
-                    width: 100%;
-                    height: 10px;
-                    margin-top: 8px;
-                `
-                )}
-            >
-                <LegendItem
-                    offset={0}
-                >
-                    {min}
-                </LegendItem>
-                {items.map((item, index) => (
-                    <LegendItem
-                        key={index}
-                        offset={item.offsetPercentage + item.sizePercentage}
-                    >
-                        {item.step}
-                    </LegendItem>
-                ))}
-            </div>
-            {indicatorEnabled ? (
                 <div
                     className={cx(
-                        'ProgressTimeline__Indicator',
+                        'ProgressTimeline__ProgressBar',
                         css`
-                        position: absolute;
-                        top: -5px;
-                        width: 20px;
-                        height: 20px;
-                        background: #07f;
-                        border: 2px solid #fff;
-                        border-radius: 50%;
-                        margin-left: -10px;
+                            position: relative;
+                            width: 100%;
+                            height: 10px;
+                            background-color: rgba(70,85,105,.2);
+                            border-radius: 3px;
+                            margin-top: 5px;
+                        `
+                    )}
+                >
+                    {items.map((item, index) => (
+                        <div
+                            key={index}
+                            className={cx(
+                                'ProgressTimeline__ProgressBarItem',
+                                css`
+                                        position: absolute;
+                                        height: 100%;
+                                        &:not(:first-child) {
+                                            border-left: 3px solid #fff;
+                                        }
+                                    `
+                            )}
+                            style={{
+                                width: item.sizePercentage + '%',
+                                left: item.offsetPercentage + '%'
+                            }}
+                        >
+
+                        </div>
+                    ))}
+                </div>
+                <div
+                    className={cx(
+                        'ProgressTimeline__Legend',
+                        css`
+                        position: relative;
+                        width: 100%;
+                        height: 16px;
+                        margin-top: 8px;
                     `
                     )}
-                    style={{
-                        left: indicatorOffsetPercentage + '%'
-                    }}
-                />
-            ) : null}
+                >
+                    <LegendItem
+                        offset={0}
+                    >
+                        {min}
+                    </LegendItem>
+                    {items.map((item, index) => (
+                        <LegendItem
+                            key={index}
+                            offset={item.offsetPercentage + item.sizePercentage}
+                        >
+                            {item.step}
+                        </LegendItem>
+                    ))}
+                </div>
+                {indicatorEnabled ? (
+                    <div
+                        className={cx(
+                            'ProgressTimeline__Indicator',
+                            css`
+                            position: absolute;
+                            top: -5px;
+                            width: 20px;
+                            height: 20px;
+                            background: #07f;
+                            border: 2px solid #fff;
+                            border-radius: 50%;
+                            margin-left: -10px;
+                        `
+                        )}
+                        style={{
+                            left: indicatorOffsetPercentage + '%'
+                        }}
+                    />
+                ) : null}
+            </div>
         </div>
     )
 }
