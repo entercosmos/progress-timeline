@@ -126,7 +126,7 @@ const ProgressTimeline = ({ steps, value }) => {
                                 css`
                                         position: absolute;
                                         height: 100%;
-                                        &:not(:first-child) {
+                                        &:not(:first-of-type) {
                                             border-left: 3px solid #fff;
                                         }
                                     `
