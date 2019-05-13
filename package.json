@@ -1,6 +1,6 @@
 {
   "name": "@pndr/progress-timeline",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Used for displaying a progress timeline.",
   "main": "lib/index.js",
   "module": "es/index.js",
