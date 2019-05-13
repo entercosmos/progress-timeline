@@ -1,5 +1,5 @@
 {
-  "name": "@cmds/progress-timeline",
+  "name": "@pndr/progress-timeline",
   "version": "0.4.0",
   "description": "Used for displaying a progress timeline.",
   "main": "lib/index.js",
@@ -11,7 +11,7 @@
     "umd"
   ],
   "scripts": {
-    "deploy": "cd demo/dist && surge --project ./ --domain cmds-progress-timeline.surge.sh",
+    "deploy": "cd demo/dist && surge --project ./ --domain pndr-progress-timeline.surge.sh",
     "build": "nwb build-react-component",
     "clean": "nwb clean-module && nwb clean-demo",
     "prepublishOnly": "npm run build",
@@ -25,7 +25,7 @@
     "react": "16.x"
   },
   "devDependencies": {
-    "@cmds/demo-utils": "^0.3.0",
+    "@pndr/demo-utils": "^0.3.0",
     "emotion": "^10.0.9",
     "lodash": "^4.17.11",
     "nwb": "0.23.x",

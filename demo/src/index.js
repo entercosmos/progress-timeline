@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Canvas, Box, Heading, Paragraph } from '@cmds/demo-utils'
+import { Canvas, Box, Heading, Paragraph } from '@pndr/demo-utils'
 import { injectGlobal } from 'emotion'
 import { render } from 'react-dom'
 
